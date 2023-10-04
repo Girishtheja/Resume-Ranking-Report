@@ -41,13 +41,13 @@ Before you begin, ensure you have met the following requirements:
     python -m venv venv
 4. Activate the virtual environment:
 
-    - On Windows:
-    ```bash
-    venv\Scripts\activate
-
-    - On macOS and Linux:
-    ```bash
-    source venv/bin/activate
+   - On Windows:
+       ```bash
+       venv\Scripts\activate
+    
+   - On macOS and Linux:
+       ```bash
+       source venv/bin/activate
 
 5. Install the project dependencies from the `requirements.txt` file:
    ```bash
