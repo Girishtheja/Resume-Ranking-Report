@@ -5,27 +5,27 @@ import PyPDF2
 import docx
 import requests
 import re
+
+import os
+
 import openai
+import os
+from dotenv import load_dotenv
 
-# # Set your OpenAI API key here
-# openai_api_key = "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"
-# # openai_api_key = "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"
+# Load environment variables from .env file
+load_dotenv()
 
-# # openai_api_key = "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"
+# Access environment variables
+api_key = os.getenv("API_KEY")
 
 
-# # Initialization
-# openai.api_key = openai_api_key
+# Set your OpenAI API key here
+openai_api_key = os.getenv("openai_api_key")
+
+# Initialization
+openai.api_key = openai_api_key
 
 # Bloom API configuration
-API_URL = "https://api-inference.huggingface.co/models/bigscience/bloom"
-headers = {"Authorization": "Bearer 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"}
-
-# Pre-trained Sentence Transformer models
-models = {
-    "paraphrase-MiniLM-L6-v2": "paraphrase-MiniLM-L6-v2",
-    "all-mpnet-base-v2": "all-mpnet-base-v2"
-}
 
 # Pre-trained Sentence Transformer models
 models = {
@@ -188,7 +188,7 @@ def main():
         similarity_score = calculate_similarity(resume_text, job_description, selected_model)
         
         # Set the threshold (you can adjust this as needed)
-        threshold = 0.4
+        threshold = 0.3
         if similarity_score >= threshold:
             st.success("Congratulations! Your resume is aligned with the job requirements.")
             
@@ -204,9 +204,9 @@ def main():
                 time.sleep(100)  # Delay for 100 seconds before making the API request
 
                 # Use the Mailgun API to send the email
-                mailgun_api_key = "ce33456b244552084e17f32765a109ea-28e9457d-a2ed4265"
-                mailgun_domain = "sandboxd400aeb954dd44509c09c64c8f93ce8a.mailgun.org"
-                from_email = "girishthejroyal116@gmail.com"
+                mailgun_api_key =os.getenv("mailgun_api_key")
+                mailgun_domain = os.getenv("mailgun_domain")
+                from_email = os.getenv("MAIL")
                 to_email = candidate_email
                 subject = "Interview Invitation"
 
