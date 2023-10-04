@@ -1,6 +1,6 @@
 # Resume Scoring and Email Sending Portal
 
-![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+<!-- ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg) -->
 
 ## Table of Contents
 

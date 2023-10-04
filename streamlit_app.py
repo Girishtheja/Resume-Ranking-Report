@@ -5,14 +5,11 @@ import PyPDF2
 import docx
 import requests
 import re
-import json
 import os
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
-
-
 
 # Access environment variables
 # Bloom API configuration
