@@ -7,26 +7,17 @@ import requests
 import re
 
 import os
-
-import openai
-import os
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
 
+
+
 # Access environment variables
-api_key = os.getenv("API_KEY")
-
-
-# Set your OpenAI API key here
-openai_api_key = os.getenv("openai_api_key")
-
-# Initialization
-openai.api_key = openai_api_key
-
 # Bloom API configuration
-
+API_URL=os.getenv("API_URL")
+headers=os.getenv("headers")
 # Pre-trained Sentence Transformer models
 models = {
     "paraphrase-MiniLM-L6-v2": "paraphrase-MiniLM-L6-v2",
