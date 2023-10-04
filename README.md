@@ -74,7 +74,7 @@ Replace the placeholders (`your-huggingface-api-key`, `your-mailgun-api-key`, `y
 1. Run the Streamlit app:
 
     ```bash
-    streamlit run app.py
+    streamlit run streamlit_app.py
 
 2. Access the app in your web browser by opening the URL provided by Streamlit.
 3. Upload a resume, enter the candidate's name and email, and click the "Score Resume" button.
