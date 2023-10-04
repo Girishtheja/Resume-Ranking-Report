@@ -5,7 +5,7 @@ import PyPDF2
 import docx
 import requests
 import re
-
+import json
 import os
 from dotenv import load_dotenv
 
@@ -17,7 +17,7 @@ load_dotenv()
 # Access environment variables
 # Bloom API configuration
 API_URL=os.getenv("API_URL")
-headers=os.getenv("headers")
+headers = {"Authorization": os.getenv("headers_value")}
 # Pre-trained Sentence Transformer models
 models = {
     "paraphrase-MiniLM-L6-v2": "paraphrase-MiniLM-L6-v2",
@@ -35,30 +35,14 @@ def extract_email_from_text(text):
         return email_matches[0]
     else:
         return None
-
 def generate_email_with_bloom(candidate_name, candidate_skills):
     # Check if the email content is cached
     if candidate_name in email_cache:
         return email_cache[candidate_name]
     
     # Use the Bloom model to generate a personalized email
-    payload = {
-        "inputs": f"Dear {candidate_name}, We are pleased to inform you that your skills in {candidate_skills} align well with the job requirements. We would like to invite you to the next round of interviews."
-    }
-    response = requests.post(API_URL, headers=headers, json=payload)
+    email_content = f"Dear {candidate_name},\nWe are pleased to inform you that your skills in {candidate_skills} align well with the job requirements. We would like to invite you to the next round of interviews."
     
-    # Extract the generated email content from the response (update this based on the actual response structure)
-    try:
-        predictions = response.json()
-        if isinstance(predictions, list) and len(predictions) > 0:
-            email_content = predictions[0].get("generated_text", "").strip()
-        else:
-            st.error("Error: No predictions found in the API response.")
-            return None
-    except KeyError:
-        st.error("Error: Unable to extract email content from the API response.")
-        return None
-
     # Cache the email content
     email_cache[candidate_name] = email_content
     return email_content
