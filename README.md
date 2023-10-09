@@ -31,7 +31,7 @@ Before you begin, ensure you have met the following requirements:
 1. Clone the repository to your local machine (if you haven't already):
 
    ```bash
-   git clone https://github.com/Girishtheja/Resume-Ranking-Report
+   git clone https://github.com/Girishtheja/Resume-Ranking-Report.git
 2. Navigate to the project directory:
  
    ```bash
