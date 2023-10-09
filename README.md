@@ -35,7 +35,7 @@ Before you begin, ensure you have met the following requirements:
 2. Navigate to the project directory:
  
    ```bash
-    cd HCI-Jcomp
+    cd Resume-Ranking-Report
 3. Create a virtual environment (recommended):
    ```bash
     python3 -m venv venv
