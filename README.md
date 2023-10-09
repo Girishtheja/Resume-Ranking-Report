@@ -62,7 +62,7 @@ Before you begin, ensure you have met the following requirements:
 
 
 ## Configuration
-1. Create a .env file in the project directory to store your environment variables. These variables include API keys and other sensitive information.
+1. Create a `.env` file in the project directory to store your environment variables. These variables include API keys and other sensitive information.
 
 - look into the .env.example file for format:
    ```bash
