@@ -38,7 +38,7 @@ Before you begin, ensure you have met the following requirements:
     cd Resume-Ranking-Report
 3. Create a virtual environment (recommended):
    ```bash
-    python3 -m venv venv
+    python -m venv venv
 4. Activate the virtual environment:
 
    - On Windows:
